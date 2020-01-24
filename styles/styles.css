@@ -1,6 +1,10 @@
 html {
   font-size: 10px;
 }
+.section-header {
+  padding-top: 6.5rem;
+  padding-bottom: 8rem;
+}
 .button {
   font-size: 1.2rem;
   font-weight: 700;
@@ -14,9 +18,12 @@ html {
   box-shadow: 0px 4px 0px #B68500;
 }
 .main {
-  background: #000;
+  background: #20202d;
   padding-top: 3rem;
   padding-bottom: 20rem;
+}
+.main .social-icons a {
+  padding-right: 1rem;
 }
 .main-content {
   padding-top: 14rem;
@@ -33,8 +40,148 @@ html {
   font-size: 1.6rem;
   line-height: 28px;
 }
+.features {
+  background: #20202d;
+  color: #fff;
+}
+.features-header h2 {
+  font-size: 3.6rem;
+}
+.features-block {
+  margin-bottom: 8rem;
+  max-width: 28.7rem;
+}
+.features-block h3 {
+  font-size: 2.8rem;
+  line-height: 2.4rem;
+  padding-top: 2.4rem;
+  padding-bottom: 1.6rem;
+}
+.features-block p {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+}
+.projects {
+  background: #20202d;
+  color: #fff;
+  padding-bottom: 6rem;
+}
+.projects-header h2 {
+  font-size: 3.6rem;
+}
+.projects-slider_item .projects-img img {
+  width: 80%;
+}
+.projects-slider_item h3 {
+  font-size: 2.4rem;
+  padding-bottom: 4rem;
+}
+.projects-slider_item .deadlines {
+  display: inline-block;
+  margin-right: 6rem;
+}
+.projects-slider_item h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.projects-slider_item p {
+  font-size: 1.6rem;
+}
+.projects-slider_item .cost {
+  display: inline-block;
+}
+.projects-slider_item .feedback-img {
+  display: inline-block;
+}
+.footer {
+  background: #20202d;
+  color: #fff;
+  padding-bottom: 10rem;
+}
+.footer h2 {
+  font-size: 3.6rem;
+}
+.footer .form {
+  background: #fff;
+  color: #000;
+  padding: 5rem 4rem;
+  box-shadow: -5px 5px 0px #FFC41D;
+  border-radius: 0.5rem;
+}
+.footer .form h3 {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+.footer .form input {
+  display: block;
+  font-size: 1.4rem;
+  background: #f8f8f8;
+  width: 100%;
+  padding: 1.7rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0px 3px 10px rgba(199, 199, 199, 0.25);
+  border-radius: 0.5rem;
+}
+.footer .form input:last-of-type {
+  margin-bottom: 0;
+}
+.footer .form button {
+  width: 100%;
+}
+.footer .mail h4,
+.footer .phone-number h4,
+.footer .social-sities h4 {
+  font-size: 2.4rem;
+}
+.footer .social-sities {
+  margin-top: 3rem;
+}
+.footer .social-sities p {
+  font-size: 1.6rem;
+  padding-top: 1.5rem;
+}
+.footer .social-sities span {
+  display: block;
+  font-size: 1.6rem;
+  margin-top: 7.5rem;
+}
+.footer a {
+  font-size: 1.6rem;
+  color: #fff;
+}
+@media (max-width: 991px) {
+  .projects-slider_item {
+    margin: 0 auto;
+  }
+  .projects-slider_item .projects-img img {
+    margin: 0 auto;
+  }
+  .projects-slider_item .projects-decription {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 576px) {
   .main-content h1 {
     font-size: 3.5rem;
+  }
+  .features {
+    padding-left: 5rem;
+  }
+  .features-header h2 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 449px) {
+  .features {
+    padding-left: 3rem;
+  }
+  .features-header h2 {
+    font-size: 6vw;
+  }
+  .features-block h3 {
+    font-size: 6vw;
+  }
+  .features-block p {
+    font-size: 5vw;
   }
 }
