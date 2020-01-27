@@ -1,3 +1,5 @@
+@button-bg: linear-gradient(180deg, #FDDE76 0%, #FFBB01 100%);
+
 html {
     font-size: 10px;
 }
@@ -10,16 +12,50 @@ html {
 }
 
 .button {
+    display: inline-block;
     font-size: 1.2rem;
     font-weight: 700;
     width: 90%;
-    background: linear-gradient(180deg, #FDDE76 0%, #FFBB01 100%);
+    background: @button-bg;
     margin-top: 4rem;
     border: none;
     line-height: 5.4rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
     text-transform: uppercase;
     border-radius: 5px 5px 10px 10px;
     box-shadow: 0px 4px 0px #B68500;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: @button-bg ;
+        z-index: -2;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken(rgb(255, 207, 47), 10%);
+        transition: all .3s;
+        z-index: -1;
+    }
+
+    &:hover {
+        &:before {
+            width: 100%;
+        }
+    }
+
 }
 
 .main {
@@ -89,6 +125,7 @@ html {
     background: #20202d;
     color: #fff;
     padding-bottom: 6rem;
+
     &-header {
         h2 {
             font-size: 3.6rem;
@@ -107,12 +144,17 @@ html {
             h3 {
                 font-size: 2.4rem;
                 padding-bottom: 4rem;
+                padding-top: 4rem;
             }
 
             .deadlines {
                 display: inline-block;
                 margin-right: 6rem;
-
+                margin-bottom: 6rem;
+                img {
+                    max-width: 3rem;
+                    max-height: 3rem;
+                }
             }
 
             h4 {
@@ -126,10 +168,23 @@ html {
 
             .cost {
                 display: inline-block;
+
+                img {
+                    max-width: 3rem;
+                    max-height: 3rem;
+                }
             }
 
             .feedback-img {
                 display: inline-block;
+            }
+
+            .feedback {
+                margin-bottom: 4rem;
+                img {
+                    max-width: 3rem;
+                    max-height: 3rem;
+                }
             }
         }
     }
@@ -155,7 +210,7 @@ html {
         padding: 5rem 4rem;
         box-shadow: -5px 5px 0px #FFC41D;
         border-radius: 0.5rem;
-
+        margin-bottom: 6rem;
         h3 {
             text-align: center;
             padding-bottom: 3rem;
@@ -209,29 +264,11 @@ html {
     a {
         font-size: 1.6rem;
         color: #fff;
+        cursor: pointer;
     }
 }
 
-@media(max-width:991px){
-    .projects{
-        &-slider{
-            &_item{
-                margin:0 auto;
-                .projects{
-                    &-img{
-                        img{
-                        margin:0 auto;
-                    }
-                    }
-                    &-decription{
-                        margin:0 auto;
-                    }
-                    
-                }
-            }
-        }
-    }
-}
+@media(max-width:991px) {}
 
 
 @media(max-width:576px) {
@@ -271,6 +308,18 @@ html {
 
             p {
                 font-size: 5vw;
+            }
+        }
+    }
+    .projects{
+        &-slider{
+            &_item{
+                .deadlines{
+                    margin-bottom: 2rem;
+                }
+                .cost{
+                    margin-bottom: 2rem;
+                }
             }
         }
     }

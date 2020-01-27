@@ -6,6 +6,7 @@ html {
   padding-bottom: 8rem;
 }
 .button {
+  display: inline-block;
   font-size: 1.2rem;
   font-weight: 700;
   width: 90%;
@@ -13,9 +14,36 @@ html {
   margin-top: 4rem;
   border: none;
   line-height: 5.4rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   text-transform: uppercase;
   border-radius: 5px 5px 10px 10px;
   box-shadow: 0px 4px 0px #B68500;
+}
+.button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: linear-gradient(180deg, #FDDE76 0%, #FFBB01 100%);
+  z-index: -2;
+}
+.button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #fbc100;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.button:hover:before {
+  width: 100%;
 }
 .main {
   background: #20202d;
@@ -75,10 +103,16 @@ html {
 .projects-slider_item h3 {
   font-size: 2.4rem;
   padding-bottom: 4rem;
+  padding-top: 4rem;
 }
 .projects-slider_item .deadlines {
   display: inline-block;
   margin-right: 6rem;
+  margin-bottom: 6rem;
+}
+.projects-slider_item .deadlines img {
+  max-width: 3rem;
+  max-height: 3rem;
 }
 .projects-slider_item h4 {
   font-size: 1.8rem;
@@ -90,8 +124,19 @@ html {
 .projects-slider_item .cost {
   display: inline-block;
 }
+.projects-slider_item .cost img {
+  max-width: 3rem;
+  max-height: 3rem;
+}
 .projects-slider_item .feedback-img {
   display: inline-block;
+}
+.projects-slider_item .feedback {
+  margin-bottom: 4rem;
+}
+.projects-slider_item .feedback img {
+  max-width: 3rem;
+  max-height: 3rem;
 }
 .footer {
   background: #20202d;
@@ -107,6 +152,7 @@ html {
   padding: 5rem 4rem;
   box-shadow: -5px 5px 0px #FFC41D;
   border-radius: 0.5rem;
+  margin-bottom: 6rem;
 }
 .footer .form h3 {
   text-align: center;
@@ -148,17 +194,7 @@ html {
 .footer a {
   font-size: 1.6rem;
   color: #fff;
-}
-@media (max-width: 991px) {
-  .projects-slider_item {
-    margin: 0 auto;
-  }
-  .projects-slider_item .projects-img img {
-    margin: 0 auto;
-  }
-  .projects-slider_item .projects-decription {
-    margin: 0 auto;
-  }
+  cursor: pointer;
 }
 @media (max-width: 576px) {
   .main-content h1 {
@@ -183,5 +219,11 @@ html {
   }
   .features-block p {
     font-size: 5vw;
+  }
+  .projects-slider_item .deadlines {
+    margin-bottom: 2rem;
+  }
+  .projects-slider_item .cost {
+    margin-bottom: 2rem;
   }
 }
